@@ -133,24 +133,26 @@ public class App {
     //todo Task 6
     public void happyNumbers(){
         // input your solution here
+
+        // following code is inspired by https://www.youtube.com/watch?v=f-yTzKJGCFs || last visit: 10.10.2022
          Scanner number = new Scanner(System.in);
          System.out.print("n: ");
-         int n = number.nextInt();
-         int sum = 0;
-         int copy = n;
+         int i = number.nextInt();
+         int s = 0;
+         int c = i;
 
-         while (copy > 9) {
+         while (c > 10) {
 
-             while (copy > 0) {
-                 int mod = copy % 10;
-                 sum = sum + (int) Math.pow(mod, 2);
-                 copy = copy / 10;
+             while (c > 0) {
+                 int mod = c % 10;
+                 s = s + (int) Math.pow(mod, 2);
+                 c = c / 10;
 
              }
-             copy = sum;
-             sum = 0;
+             c = s;
+             s = 0;
          }
-         if (copy == 1) {
+         if (c == 1) {
              System.out.println("Happy number!");
 
          }else
